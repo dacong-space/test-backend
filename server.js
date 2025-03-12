@@ -31,4 +31,9 @@ app.post("/login", (req, res) => {
   
 
 // 启动服务器
-app.listen(5000, () => console.log("🚀 Server running on http://localhost:5000"));
+const PORT = process.env.PORT || 5000; // 让 Render 自动分配端口
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
+
